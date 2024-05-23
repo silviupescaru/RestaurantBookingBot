@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = CoreBotCLU
+build_property.ProjectDir = /home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

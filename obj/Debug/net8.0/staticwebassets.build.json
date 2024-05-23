@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "8JIBaZ5V6vrSQjSBAm+8YwAI350pSK9nh5xbs+7/MHI=",
+  "Source": "CoreBotCLU",
+  "BasePath": "_content/CoreBotCLU",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CoreBotCLU/wwwroot",
+      "Source": "CoreBotCLU",
+      "ContentRoot": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/wwwroot/",
+      "BasePath": "_content/CoreBotCLU",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/wwwroot/default.htm",
+      "SourceId": "CoreBotCLU",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/wwwroot/",
+      "BasePath": "_content/CoreBotCLU",
+      "RelativePath": "default.htm",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/default.htm"
+    }
+  ]
+}

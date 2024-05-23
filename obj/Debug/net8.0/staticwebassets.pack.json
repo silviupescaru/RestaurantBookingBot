@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/wwwroot/default.htm",
+      "PackagePath": "staticwebassets/default.htm"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.CoreBotCLU.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.CoreBotCLU.props",
+      "PackagePath": "build\\CoreBotCLU.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.CoreBotCLU.props",
+      "PackagePath": "buildMultiTargeting\\CoreBotCLU.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.CoreBotCLU.props",
+      "PackagePath": "buildTransitive\\CoreBotCLU.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
