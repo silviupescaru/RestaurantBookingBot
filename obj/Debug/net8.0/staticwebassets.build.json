@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8JIBaZ5V6vrSQjSBAm+8YwAI350pSK9nh5xbs+7/MHI=",
+  "Hash": "iF5PVRPH7VNCGKKSkLXPCgvLaUfJSvLWh85e2jNCLQg=",
   "Source": "CoreBotCLU",
   "BasePath": "_content/CoreBotCLU",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "CoreBotCLU/wwwroot",
+      "Name": "CoreBotCLU\\wwwroot",
       "Source": "CoreBotCLU",
-      "ContentRoot": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/wwwroot/",
+      "ContentRoot": "D:\\Facultate\\RestaurantBookingBot\\wwwroot\\",
       "BasePath": "_content/CoreBotCLU",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/wwwroot/default.htm",
+      "Identity": "D:\\Facultate\\RestaurantBookingBot\\wwwroot\\default.htm",
       "SourceId": "CoreBotCLU",
       "SourceType": "Discovered",
-      "ContentRoot": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/wwwroot/",
+      "ContentRoot": "D:\\Facultate\\RestaurantBookingBot\\wwwroot\\",
       "BasePath": "_content/CoreBotCLU",
       "RelativePath": "default.htm",
       "AssetKind": "All",
@@ -33,7 +33,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/default.htm"
+      "OriginalItemSpec": "wwwroot\\default.htm"
     }
   ]
 }

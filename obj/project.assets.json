@@ -7645,24 +7645,31 @@
     ]
   },
   "packageFolders": {
-    "/home/mike/.nuget/packages/": {}
+    "C:\\Users\\mike\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/CoreBotCLU.csproj",
+      "projectUniqueName": "D:\\Facultate\\RestaurantBookingBot\\CoreBotCLU.csproj",
       "projectName": "CoreBotCLU",
-      "projectPath": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/CoreBotCLU.csproj",
-      "packagesPath": "/home/mike/.nuget/packages/",
-      "outputPath": "/home/mike/Facultate/Anul3/LFT-Proiect/cognitive-service-language-samples/CoreBotWithCLU/obj/",
+      "projectPath": "D:\\Facultate\\RestaurantBookingBot\\CoreBotCLU.csproj",
+      "packagesPath": "C:\\Users\\mike\\.nuget\\packages\\",
+      "outputPath": "D:\\Facultate\\RestaurantBookingBot\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/mike/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\mike\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -7675,6 +7682,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -7721,7 +7733,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/home/mike/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -72,7 +72,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
                     {
                         Destination = cluResult.Entities.GetToCity(),
                         Origin = cluResult.Entities.GetFromCity(),
-                        TravelDate = cluResult.Entities.GetFlightDate(),
+                        Date = cluResult.Entities.GetFlightDate(),
                     };
 
                     // Run the BookingDialog giving it whatever details we have from the CLU call, it will fill out the remainder.
@@ -109,7 +109,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 
                 // If the call to the booking service was successful tell the user.
 
-                var timeProperty = new TimexProperty(result.TravelDate);
+                var timeProperty = new TimexProperty(result.Date);
                 var travelDateMsg = timeProperty.ToNaturalLanguage(DateTime.Now);
                 var messageText = $"I have you booked to {result.Destination} from {result.Origin} on {travelDateMsg}";
                 var message = MessageFactory.Text(messageText, messageText, InputHints.IgnoringInput);

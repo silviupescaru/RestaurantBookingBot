@@ -12,9 +12,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 {
     public class BookingDialog : CancelAndHelpDialog
     {
-        private const string LocationStepMsgText = "Where would you like to book a table?";
-        private const string DateStepMsgText = "Which day would you like to book the table?";
-        private const string TimeStepMsgText = "At what time would you like?";
+        private const string LocationStepMsgText = "Where would you like to book a table to?";
 
         public BookingDialog()
             : base(nameof(BookingDialog))
@@ -25,8 +23,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
                 LocationStepAsync,
-                DayStepAsync,
-                HourStepAsync,
+                DateStepAsync,
                 ConfirmStepAsync,
                 FinalStepAsync,
             }));
@@ -48,43 +45,27 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             return await stepContext.NextAsync(bookingDetails.Location, cancellationToken);
         }
 
-        private async Task<DialogTurnResult> DayStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
+        private async Task<DialogTurnResult> DateStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
             var bookingDetails = (BookingDetails)stepContext.Options;
 
             bookingDetails.Location = (string)stepContext.Result;
 
-            if (bookingDetails.Day == null)
+            if (bookingDetails.Date == null || IsAmbiguous(bookingDetails.Date))
             {
-                var promptMessage = MessageFactory.Text(DateStepMsgText, DateStepMsgText, InputHints.ExpectingInput);
-                return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
+                return await stepContext.BeginDialogAsync(nameof(DateResolverDialog), bookingDetails.Date, cancellationToken);
             }
 
-            return await stepContext.NextAsync(bookingDetails.Day, cancellationToken);
-        }
-
-        private async Task<DialogTurnResult> HourStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
-        {
-            var bookingDetails = (BookingDetails)stepContext.Options;
-
-            bookingDetails.Day = (string)stepContext.Result;
-
-            if (bookingDetails.Hour == null)
-            {
-                var promptMessage = MessageFactory.Text(TimeStepMsgText, TimeStepMsgText, InputHints.ExpectingInput);
-                return await stepContext.PromptAsync(nameof(TextPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
-            }
-
-            return await stepContext.NextAsync(bookingDetails.Hour, cancellationToken);
+            return await stepContext.NextAsync(bookingDetails.Date, cancellationToken);
         }
 
         private async Task<DialogTurnResult> ConfirmStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
             var bookingDetails = (BookingDetails)stepContext.Options;
 
-            bookingDetails.Hour = (string)stepContext.Result;
+            bookingDetails.Date = (string)stepContext.Result;
 
-            var messageText = $"Please confirm, I have you booked to: {bookingDetails.Location} at: {bookingDetails.Day}, {bookingDetails.Hour}. Is this correct?";
+            var messageText = $"Please confirm, I have you booked to: {bookingDetails.Location} on: {bookingDetails.Date}. Is this correct?";
             var promptMessage = MessageFactory.Text(messageText, messageText, InputHints.ExpectingInput);
 
             return await stepContext.PromptAsync(nameof(ConfirmPrompt), new PromptOptions { Prompt = promptMessage }, cancellationToken);
