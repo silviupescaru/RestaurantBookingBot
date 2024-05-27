@@ -3,6 +3,7 @@
 
 using System;
 using System.Threading;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs;
@@ -109,9 +110,11 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 
                 // If the call to the booking service was successful tell the user.
 
-                var timeProperty = new TimexProperty(result.Date);
+                var timeProperty = new TimexProperty(result.Hour);
+                var dateProperty = new TimexProperty(result.Day);
                 var travelDateMsg = timeProperty.ToNaturalLanguage(DateTime.Now);
-                var messageText = $"I have you booked to {result.Destination} from {result.Origin} on {travelDateMsg}";
+                
+                var messageText = $"I have you booked to {result.Location} on {travelDateMsg}";
                 var message = MessageFactory.Text(messageText, messageText, InputHints.IgnoringInput);
                 await stepContext.Context.SendActivityAsync(message, cancellationToken);
             }

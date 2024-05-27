@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Facultate\\RestaurantBookingBot\\CoreBotCLU.csproj": {}
+    "/home/mike/Facultate/Anul3/LFT-Proiect/RestaurantBookingBot/CoreBotCLU.csproj": {}
   },
   "projects": {
-    "D:\\Facultate\\RestaurantBookingBot\\CoreBotCLU.csproj": {
+    "/home/mike/Facultate/Anul3/LFT-Proiect/RestaurantBookingBot/CoreBotCLU.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Facultate\\RestaurantBookingBot\\CoreBotCLU.csproj",
+        "projectUniqueName": "/home/mike/Facultate/Anul3/LFT-Proiect/RestaurantBookingBot/CoreBotCLU.csproj",
         "projectName": "CoreBotCLU",
-        "projectPath": "D:\\Facultate\\RestaurantBookingBot\\CoreBotCLU.csproj",
-        "packagesPath": "C:\\Users\\mike\\.nuget\\packages\\",
-        "outputPath": "D:\\Facultate\\RestaurantBookingBot\\obj\\",
+        "projectPath": "/home/mike/Facultate/Anul3/LFT-Proiect/RestaurantBookingBot/CoreBotCLU.csproj",
+        "packagesPath": "/home/mike/.nuget/packages/",
+        "outputPath": "/home/mike/Facultate/Anul3/LFT-Proiect/RestaurantBookingBot/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\mike\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/mike/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,11 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -89,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/home/mike/.dotnet/sdk/8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

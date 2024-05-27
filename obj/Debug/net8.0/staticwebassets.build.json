@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "iF5PVRPH7VNCGKKSkLXPCgvLaUfJSvLWh85e2jNCLQg=",
+  "Hash": "OzHSZZB94vkNxgsCVnLjAn8ji1DVKfzpUbmC2JfZyJg=",
   "Source": "CoreBotCLU",
   "BasePath": "_content/CoreBotCLU",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "CoreBotCLU\\wwwroot",
+      "Name": "CoreBotCLU/wwwroot",
       "Source": "CoreBotCLU",
-      "ContentRoot": "D:\\Facultate\\RestaurantBookingBot\\wwwroot\\",
+      "ContentRoot": "/home/mike/Facultate/Anul3/LFT-Proiect/RestaurantBookingBot/wwwroot/",
       "BasePath": "_content/CoreBotCLU",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\Facultate\\RestaurantBookingBot\\wwwroot\\default.htm",
+      "Identity": "/home/mike/Facultate/Anul3/LFT-Proiect/RestaurantBookingBot/wwwroot/default.htm",
       "SourceId": "CoreBotCLU",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\Facultate\\RestaurantBookingBot\\wwwroot\\",
+      "ContentRoot": "/home/mike/Facultate/Anul3/LFT-Proiect/RestaurantBookingBot/wwwroot/",
       "BasePath": "_content/CoreBotCLU",
       "RelativePath": "default.htm",
       "AssetKind": "All",
@@ -33,7 +33,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\default.htm"
+      "OriginalItemSpec": "wwwroot/default.htm"
     }
   ]
 }
