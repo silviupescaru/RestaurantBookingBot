@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CoreBotCLU")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfa0e5ca10bb34823a99404a9b4876ddadf7a213")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fccb8ce972331e681eab5a536f0fa24f4da37b2b")]
 [assembly: System.Reflection.AssemblyProductAttribute("CoreBotCLU")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CoreBotCLU")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

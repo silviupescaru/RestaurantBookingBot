@@ -86,7 +86,12 @@ namespace Microsoft.BotBuilderSamples.Dialogs
                     break;
                 
                 case RestaurantBooking.Intent.BookTable:
-                    return await stepContext.BeginDialogAsync(nameof(BookingDialog), new BookingDetails(), cancellationToken);
+                    var tableBookingDetails = new BookingDetails()
+                    {
+                        Location = cluResult.Entities.GetLocation(),
+                        Date = cluResult.Entities.GetFlightDate(),
+                    };
+                    return await stepContext.BeginDialogAsync(nameof(BookingDialog), tableBookingDetails, cancellationToken);
 
                 default:
                     // Catch all for unhandled intents
