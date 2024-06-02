@@ -20,10 +20,11 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             : base(id ?? nameof(DateResolverDialog))
         {
             AddDialog(new DateTimePrompt(nameof(DateTimePrompt), DateTimePromptValidator));
+            // This is another WaterFall that checks the answer to the When question above.
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
-                InitialStepAsync,
-                FinalStepAsync,
+                InitialStepAsync, // This step waits for an answer
+                FinalStepAsync, // This step checks the answer above to be a valid answer
             }));
 
             // The initial child Dialog to run.
@@ -47,20 +48,6 @@ namespace Microsoft.BotBuilderSamples.Dialogs
                         RetryPrompt = repromptMessage,
                     }, cancellationToken);
             }
-
-            // We have a Date we just need to check it is unambiguous.
-            // This is disabled for now since Resolution is not yet included in CLU response.
-
-            //var timexProperty = new TimexProperty(timex);
-            //if (!timexProperty.Types.Contains(Constants.TimexTypes.Definite))
-            //{
-            //    // This is essentially a "reprompt" of the data we were given up front.
-            //    return await stepContext.PromptAsync(nameof(DateTimePrompt),
-            //        new PromptOptions
-            //        {
-            //            Prompt = repromptMessage,
-            //        }, cancellationToken);
-            //}
 
             return await stepContext.NextAsync(new List<DateTimeResolution> { new DateTimeResolution { Timex = timex } }, cancellationToken);
         }

@@ -22,10 +22,6 @@ namespace Microsoft.BotBuilderSamples
             Confirm,
             Location,
             Time,
-            
-            
-            BookFlight,
-            GetWeather,
             None
         }
 
@@ -72,30 +68,12 @@ namespace Microsoft.BotBuilderSamples
             public CluEntity[] Entities;
 
             public CluEntity[] GetLocationList() => Entities.Where(e => e.Category == "location").ToArray();
-
-            public CluEntity[] GetDayList() => Entities.Where(e => e.Category == "day").ToArray();
-
-            public CluEntity[] GetHourList() => Entities.Where(e => e.Category == "hour").ToArray();
-
+            //
             public string GetLocation() => GetLocationList().FirstOrDefault()?.Text;
 
-            public string GetHour() => GetHourList().FirstOrDefault()?.Text;
+            public CluEntity[] GetBookingDateList() => Entities.Where(e => e.Category == "date").ToArray();
 
-            public string GetDay() => GetDayList().FirstOrDefault()?.Text;
-            
-            
-
-            public CluEntity[] GetFromCityList() => Entities.Where(e => e.Category == "fromCity").ToArray();
-
-            public CluEntity[] GetToCityList() => Entities.Where(e => e.Category == "toCity").ToArray();
-
-            public CluEntity[] GetFlightDateList() => Entities.Where(e => e.Category == "flightDate").ToArray();
-
-            public string GetFromCity() => GetFromCityList().FirstOrDefault()?.Text;
-
-            public string GetToCity() => GetToCityList().FirstOrDefault()?.Text;
-
-            public string GetFlightDate() => GetFlightDateList().FirstOrDefault()?.Text;
+            public string GetBookingDate() => GetBookingDateList().FirstOrDefault()?.Text;
         }
     }
 }

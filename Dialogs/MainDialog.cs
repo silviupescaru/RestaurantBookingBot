@@ -26,11 +26,12 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 
             AddDialog(new TextPrompt(nameof(TextPrompt)));
             AddDialog(bookingDialog);
+            // Down below we have the WaterFall Steps that the MainDialog is following
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
-                IntroStepAsync,
-                ActStepAsync,
-                FinalStepAsync,
+                IntroStepAsync, // Checks if the CLU is configured and if so it can continue to the next steps of the WaterFall
+                ActStepAsync, // This step checks which intent is present in our query
+                FinalStepAsync, // If everything is successfull in the step above, it will show us our reservation in chat
             }));
 
             // The initial child Dialog to run.
@@ -66,30 +67,12 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             var cluResult = await _cluRecognizer.RecognizeAsync<RestaurantBooking>(stepContext.Context, cancellationToken);
             switch (cluResult.GetTopIntent().intent)
             {
-                case RestaurantBooking.Intent.BookFlight:
-                    // Initialize BookingDetails with any entities we may have found in the response.
-                    var bookingDetails = new BookingDetails()
-                    {
-                        Destination = cluResult.Entities.GetToCity(),
-                        Origin = cluResult.Entities.GetFromCity(),
-                        Date = cluResult.Entities.GetFlightDate(),
-                    };
-
-                    // Run the BookingDialog giving it whatever details we have from the CLU call, it will fill out the remainder.
-                    return await stepContext.BeginDialogAsync(nameof(BookingDialog), bookingDetails, cancellationToken);
-
-                case RestaurantBooking.Intent.GetWeather:
-                    // We haven't implemented the GetWeatherDialog so we just display a TODO message.
-                    var getWeatherMessageText = "TODO: get weather flow here";
-                    var getWeatherMessage = MessageFactory.Text(getWeatherMessageText, getWeatherMessageText, InputHints.IgnoringInput);
-                    await stepContext.Context.SendActivityAsync(getWeatherMessage, cancellationToken);
-                    break;
                 
                 case RestaurantBooking.Intent.BookTable:
                     var tableBookingDetails = new BookingDetails()
                     {
                         Location = cluResult.Entities.GetLocation(),
-                        Date = cluResult.Entities.GetFlightDate(),
+                        Date = cluResult.Entities.GetBookingDate(),
                     };
                     return await stepContext.BeginDialogAsync(nameof(BookingDialog), tableBookingDetails, cancellationToken);
 
@@ -106,7 +89,7 @@ namespace Microsoft.BotBuilderSamples.Dialogs
 
         private async Task<DialogTurnResult> FinalStepAsync(WaterfallStepContext stepContext, CancellationToken cancellationToken)
         {
-            // If the child dialog ("BookingDialog") was cancelled, the user failed to confirm or if the intent wasn't BookFlight
+            // If the child dialog ("BookingDialog") was cancelled, the user failed to confirm or if the intent wasn't BookTable
             // the Result here will be null.
             if (stepContext.Result is BookingDetails result)
             {

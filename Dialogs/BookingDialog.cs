@@ -20,12 +20,13 @@ namespace Microsoft.BotBuilderSamples.Dialogs
             AddDialog(new TextPrompt(nameof(TextPrompt)));
             AddDialog(new ConfirmPrompt(nameof(ConfirmPrompt)));
             AddDialog(new DateResolverDialog());
+            // This is the WaterFall for the BookTable intent which is the main one
             AddDialog(new WaterfallDialog(nameof(WaterfallDialog), new WaterfallStep[]
             {
-                LocationStepAsync,
-                DateStepAsync,
-                ConfirmStepAsync,
-                FinalStepAsync,
+                LocationStepAsync, // This step checks the answer of the Where question above and sends the correct result to the next step
+                DateStepAsync, // This step instantiate the DateResolverDialog and checks the answer to the When question then it sends it to the next step
+                ConfirmStepAsync, // This step is only to confirm the answers above and sends to the next step
+                FinalStepAsync, // This step returns the stepContext result to the MainDialog
             }));
 
             // The initial child Dialog to run.
